@@ -1,0 +1,53 @@
+<!--index.wxml-->
+
+<view class="container">
+  <custom-navbar class="custom-navbar" bind:showPopup="showPopupHandler"></custom-navbar>
+  <tab-bar bind:drawSvg="drawSvg" bind:drawMask="drawMask" bind:dontDraw="dontDraw" bind:switchCase="switchCase" class="tab-bar"></tab-bar>
+  <view class="canvas-container">
+    <canvas class="canvas" type="2d" id="myCanvas" canvas-id="myCanvas" catch:touchstart="onTouchStart" catch:touchmove="onTouchMove" catch:touchend="onTouchEnd"></canvas>
+    <view class="border"></view>
+    <view wx:if="{{!drawing}}" class="canvas-icon">
+      <image src="/image/canvas_graphics.svg" mode="" />
+      <text wx:if="{{case==0}}">点击任意按钮开始</text>
+      <text wx:if="{{case==1}}">可点击画笔在此绘制元素</text>
+      <text wx:if="{{case==2}}">可点击画笔在此绘制轮廓</text>
+    </view>
+  </view>
+
+
+  <view class="toolbar" animation="{{ toolbarAnimation }}">
+    <button class="cancelBtn" bind:tap="cancelBtnClick">
+      <image class="cancelBtn-image" src="/image/取消.svg"></image>
+    </button>
+    <view wx:if="{{case==1}}" style="background:{{rgb}};" bindtap="toPick" class="color-block"></view>
+    <button class="submitBtn" bind:tap="submitBtnClick">
+      <image class="submitBtn-image" src="/image/确定.svg"></image>
+    </button>
+  </view>
+  <color-picker class="color-picker" bind:close="pickClose" bindchangeColor="pickColor" initColor="{{rgb}}" show="{{pick}}" />
+  <mp-dialog title="你收到一条信息" show="{{beginDialogShow}}" bindbuttontap="tapBeginDialogButton" buttons="{{beginDialogButtons}}">
+    <view>有用户正在用，待会再来: )</view>
+  </mp-dialog>
+
+  <view class="popup-container" style="height: {{popupHeight}}px" animation="{{ panelAnimation }}" bindtap="touchPopupRight">
+    <view class="popup-panel">
+    
+    <view class="qr-code-container">
+      <text class="text">项目链接：A Versatile Collage Visualization Technique</text>
+      <text class="text">长按保存二维码扫码进入或点击二维码复制项目地址</text>
+      
+      <image bind:tap="copywxtap" class="qr-code" src="/image/qrcode.png" mode="aspectFit" show-menu-by-longpress="{{true}}"></image>
+      
+      
+    </view>
+          <view class="weui-footer">
+            <view class="weui-footer__links">
+              <navigator url="http://beian.miit.gov.cn" class="weui-footer__link" style="font-size: 10px;">粤ICP备2024284369号</navigator>
+            </view>
+          </view>
+
+          
+    </view>
+  </view>
+
+</view>

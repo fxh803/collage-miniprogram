@@ -1,0 +1,28 @@
+<!--pages/processing/processing.wxml-->
+<view class="container">
+  <custom-navbar ></custom-navbar>
+  <view class="progressBar" animation="{{progressBarAnimation}}" style="background-color: {{resultImage!='' ? '#11aa66' : '#007aff'}};"></view>
+
+  <view class="text-container">
+  <text wx:if="{{progressType==0&&progress==0}}" class="text">正在初始化...</text>
+  <text wx:if="{{progressType==0&&progress!=0}}" class="text">第{{progress}}个元素预处理中，请稍后...</text>
+  
+  <text wx:if="{{progressType==1&&resultImage==''}}" class="text">正在处理,当前进度{{progress}}%</text>
+  <text wx:if="{{progressType==1&&resultImage!=''}}" class="text">已完成！</text>
+</view>
+
+  <view class="img-container" >
+  <view wx:if="{{resultImage==''}}" class="img-load">
+    <image  class="icon-img"  src="/image/图片.svg" ></image>
+    请等待片刻~
+  </view>
+  <image wx:if="{{resultImage!=''}}" class="img"  bindtap="preview" src="{{resultImage}}" ></image>
+</view>
+
+<view class="btn-container">
+<button class="save-btn" bind:tap="saveImage">
+  <image class="save-img" src="/image/下载.svg"></image>
+  </button>
+</view>
+
+</view>

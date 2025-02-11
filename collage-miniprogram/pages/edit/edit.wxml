@@ -1,0 +1,18 @@
+<!--pages/edit/edit.wxml-->
+<view class="container">
+  <custom-navbar ></custom-navbar>
+  <view class="text-container">
+  <text class="text">框选区域即可编辑，点击删除</text>
+</view>
+<view class="img-container" >
+  <image class="img" src="{{svgImage}}" style="width: {{imageWidth}}px;height: {{imageHeight}}px;"></image>
+  <canvas class="myCanvas" type="2d" id="myCanvas" canvas-id="myCanvas" catch:touchstart="onTouchStart" catch:touchmove="onTouchMove" catch:touchend="onTouchEnd" style="width: {{imageWidth}}px;height: {{imageHeight}}px;" ></canvas>
+</view>
+<view class="btn-container">
+<button class="confirm-btn" bind:tap="exportMask">
+  <image class="confirm-img" src="/image/确定.svg"></image>
+  </button>
+</view>
+  
+
+</view>

@@ -1,0 +1,59 @@
+/* pages/edit/edit.wxss */
+.container {
+ display: flex;
+ align-items: center;
+  height: 100vh;
+  padding: 0;
+  flex-direction: column;
+}
+.img-container{
+  position: relative;
+  width: fit-content;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img {
+  z-index: -100;
+}
+.myCanvas {
+  position: absolute; /* 绝对定位 */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 999; /* 确保在图片之上 */
+}
+.btn-container{
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.confirm-btn{
+  
+  background-color: white;
+  border: rgb(17, 170, 102) solid 3px;
+  height: 50px;
+  width: 180px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.confirm-img{
+  width: 30px;
+  height: 30px;
+}
+.text-container{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+}
+.text{
+  font-size: 14px;
+  top: 20px;
+}

@@ -1,0 +1,105 @@
+<!--components/tab-bar/tab-bar.wxml-->
+<view class="container">
+  <view class="first-container">
+    <button data-id="btn0" style="border:{{btn0Border}}px solid rgb(17, 170, 102)" class="button" bindtap="onButtonClick">elements</button>
+    <button data-id="btn1" style="border:{{btn1Border}}px solid rgb(17, 170, 102)" class="button" bindtap="onButtonClick">masks</button>
+    <button wx:if="{{ready}}" class="ultimate-submitBtn" bind:tap="uploadToServer">
+      <image class="go-image" src="/image/go.svg"></image>
+      <image class="right-image" src="/image/向上.svg"></image>
+    </button>
+  </view>
+  <view class="second-container" animation="{{ tableAnimation }}">
+
+    <view wx:if="{{case==1}}" class="elements-case">
+      <view class="elements-case-options">
+        <view class="button-container">
+          <button data-id="svg0" bindtap="onSvgClick">
+            <image class="element-image" src="/image/svg/2.svg"></image>
+            <image wx:if="{{confirmSvg[0]}}" class="confirm-image" src="/image/confirm.svg"></image>
+          </button>
+          <button data-id="svg1" bindtap="onSvgClick">
+            <image class="element-image" src="/image/svg/3.svg"></image>
+            <image wx:if="{{confirmSvg[1]}}" class="confirm-image" src="/image/confirm.svg"></image>
+          </button>
+          <button data-id="svg2" bindtap="onSvgClick">
+            <image class="element-image" src="/image/svg/4.svg"></image>
+            <image wx:if="{{confirmSvg[2]}}" class="confirm-image" src="/image/confirm.svg"></image>
+          </button>
+          <button data-id="svg3" bindtap="onSvgClick">
+            <image class="element-image" src="/image/svg/5.svg"></image>
+            <image wx:if="{{confirmSvg[3]}}" class="confirm-image" src="/image/confirm.svg"></image>
+          </button>
+          <button bindtap="collapseTap">
+            <image class="collapse-image" src="/image/下拉.svg"></image>
+          </button>
+        </view>
+      </view>
+
+
+      <button class="draw-btn" data-id="drawBtn0" bindtap="onDrawBtnClick" style="border:{{drawbtn0Border}}px solid green">
+        <image class="pen-image" src="/image/pen.svg"></image>
+        <image wx:if="{{confirmSvg[200]}}" class="confirm-image" src="/image/confirm.svg"></image>
+      </button>
+      <button class="upload-btn" data-id="uploadBtn0" bindtap="onUploadBtnClick">
+        <image class="upload-image" src="/image/upload.svg"></image>
+        <image wx:if="{{confirmSvg[201]}}" class="confirm-image" src="/image/confirm.svg"></image>
+      </button>
+    </view>
+    <view wx:if="{{case==2}}" class="masks-case">
+      <view class="masks-case-options">
+        <view class="button-container">
+          <button data-id="mask0" bindtap="onMaskClick">
+            <image class="mask-image" src="/image/mask/bear.svg"></image>
+            <image wx:if="{{confirmMask[0]}}" class="confirm-image" src="/image/confirm.svg"></image>
+          </button>
+          <button data-id="mask1" bindtap="onMaskClick">
+            <image class="mask-image" src="/image/mask/bird.svg"></image>
+            <image wx:if="{{confirmMask[1]}}" class="confirm-image" src="/image/confirm.svg"></image>
+          </button>
+          <button data-id="mask2" bindtap="onMaskClick">
+            <image class="mask-image" src="/image/mask/circle.svg"></image>
+            <image wx:if="{{confirmMask[2]}}" class="confirm-image" src="/image/confirm.svg"></image>
+          </button>
+          <button data-id="mask3" bindtap="onMaskClick">
+            <image class="mask-image" src="/image/mask/kun.svg"></image>
+            <image wx:if="{{confirmMask[3]}}" class="confirm-image" src="/image/confirm.svg"></image>
+          </button>
+          <button data-id="mask4" bindtap="onMaskClick">
+            <image class="mask-image" src="/image/mask/princess.svg"></image>
+            <image wx:if="{{confirmMask[4]}}" class="confirm-image" src="/image/confirm.svg"></image>
+          </button>
+          <button data-id="mask5" bindtap="onMaskClick">
+            <image class="mask-image" src="/image/mask/CHINAVIS.png"></image>
+            <image wx:if="{{confirmMask[5]}}" class="confirm-image" src="/image/confirm.svg"></image>
+          </button>
+        </view>
+
+      </view>
+      <button class="draw-btn" data-id="drawBtn1" bindtap="onDrawBtnClick" style="border:{{drawbtn1Border}}px solid green">
+        <image class="pen-image" src="/image/pen.svg"></image>
+        <image wx:if="{{confirmMask[200]}}" class="confirm-image" src="/image/confirm.svg"></image>
+      </button>
+      <!-- <button class="upload-btn"  data-id="uploadBtn1" bindtap="onUploadBtnClick">
+        <image class="upload-image" src="/image/upload.svg"></image>
+        <image wx:if="{{confirmMask[201]}}" class="confirm-image" src="/image/confirm.svg"></image>
+      </button> -->
+    </view>
+
+  </view>
+  <view class="collapse" animation="{{ collapseAnimation }}">
+    <button wx:if="{{case==1}}" wx:for="{{elementItems}}" bindtap="onSvgClick" wx:key="index" data-id="svg{{item.index}}">
+      <image class="element-image" src="https://collageminiprogram.szuvis.com/svg/images/{{item.index}}.svg"></image>
+      <image wx:if="{{confirmSvg[item.index]}}" class="confirm-image" src="/image/confirm.svg"></image>
+    </button>
+    <button data-id="svg44" bindtap="onSvgClick">
+      <image class="element-image" src="https://collageminiprogram.szuvis.com/png/images/44.png"></image>
+      <image wx:if="{{confirmSvg[44]}}" class="confirm-image" src="/image/confirm.svg"></image>
+    </button>
+    <button data-id="svg45" bindtap="onSvgClick">
+      <image class="element-image" src="https://collageminiprogram.szuvis.com/png/images/45.png"></image>
+      <image wx:if="{{confirmSvg[45]}}" class="confirm-image" src="/image/confirm.svg"></image>
+    </button>
+
+  </view>
+  <mp-half-screen-dialog bindbuttontap="choosePanelButtontap" show="{{showChoosePanel}}" maskClosable="{{false}}" title="上传元素" subTitle="" desc="上传照片作为元素: 1.上传单张照片并编辑 2.照片墙（上传多张照片）" tips="选择上传单张照片可以对照片中想要的部分进行选择，照片墙模式下则将整个图片作为元素" buttons="{{choosePanelButtons}}"></mp-half-screen-dialog>
+</view>

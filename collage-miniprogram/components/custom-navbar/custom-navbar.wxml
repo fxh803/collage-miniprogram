@@ -1,0 +1,8 @@
+<view class="navbar" style="padding-top:{{statusBarHeight}}px;height: {{navHeight}}px;">
+  <button class="button" bindtap="handleButtonClick" >
+    <image wx:if="{{ status==0 }}" class="btn_icon" src='/image/stack.svg'></image>
+    <image wx:if="{{ status==1 }}" class="btn_icon" src='/image/左箭头.svg'></image>
+    <image wx:if="{{ status==2 }}" class="btn_icon" src='/image/home.svg'></image>
+  </button>
+  <text class="text">CollageVis</text>
+</view>

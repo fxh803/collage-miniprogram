@@ -1,0 +1,150 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+}
+.container{
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.canvas-container{
+  position: relative;
+  flex: 1;
+  width: 100%;
+  z-index: 1;
+  /* display: flex; */
+}
+.canvas{
+  background-color: wheat;
+  width: 100%;
+  height: 100%;
+}
+.border{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  z-index: 0;
+  /* transform: translate(-50%,-50%); */
+  border: 3px dashed rgba(50, 50, 50, 0.4); /* 虚线边框，1像素宽，黑色 */
+  font-size: 14px;
+  pointer-events: none;
+}
+.canvas-icon{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 0;
+  pointer-events: none;
+}
+.canvas-icon image{
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+.canvas-icon text{
+  font-size: 10px;
+  color: rgba(138, 138, 138,.8);
+  pointer-events: none;
+}
+.tab-bar{
+  width: 100%;
+}
+.footer{
+  width: 100%;
+}
+
+.toolbar{
+  position: fixed;
+  display: flex;
+  bottom: -50px;
+  justify-content: center;
+  height: 50px;
+  align-items: center; /* 垂直居中 */
+  z-index: 3;
+  width: 100%;
+  background-color: white;
+}
+
+.toolbar button{
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.toolbar .cancelBtn{
+  position: absolute;
+  left: 20px;
+}
+.toolbar .submitBtn{
+  position: absolute;
+  right: 20px;
+}
+.color-block{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+.cancelBtn-image, .submitBtn-image{
+  width: 30px;
+  height: 30px;
+}
+.color-picker{
+  z-index: 9999;
+}
+.popup-container {
+  position: fixed;
+  left: -100vw;
+  bottom: 0;
+  width: 100vw;
+  z-index: 1000;
+  padding: 0;
+  margin: 0;
+}
+.popup-panel {
+  width: 68%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.custom-navbar{
+  position: relative;
+  z-index: 1000;
+}
+.qr-code{
+  width: 100px;
+  height: 100px;
+}
+.qr-code-container{
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.weui-footer{
+  margin-bottom: 10px;
+  width: 100%;
+}
+.qr-code-container .text{
+  font-size: 8px;
+}

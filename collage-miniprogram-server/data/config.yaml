@@ -1,0 +1,35 @@
+# weights_list: [1]
+
+# primitive_multiple: 80
+
+# simple shape
+shape_type: ["circle","square"] # "square" or ["circle","square"]
+shape_num: [5,5] # num1 or [num1, num2]
+
+# primitive_dir: "./data/test3"
+
+# photos_dir: "./data/test2"
+
+word_file: "./wordle.csv"
+font_path: "./HoboStd.otf"
+word_color: [123,234,111,255]
+max_words_num: 100
+
+primitive_pos_init_type: "distance_field" # "distance_field","random_within_shape","medial_axis"
+is_global_size: False
+is_rotate: True
+is_rotate_random: False
+initialize_fill_ratio: 0.55
+primitive_fill_ratio: 0.001
+
+render_img_size: 1000
+num_iters: 50
+
+svg_normalized_size: 100
+raster_normalized_size: 500
+outline_num_segments: 20
+
+base_lr:
+  size: 0.02
+  angle: 0.05
+  pos: 1.1

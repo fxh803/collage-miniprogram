@@ -1,0 +1,70 @@
+/* pages/processing/processing.wxss */
+.text{
+  font-size: 14px;
+}
+.text-container{
+  width: 100%;
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: auto;
+  justify-content: center;
+
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+   height: 100vh;
+   padding: 0;
+ }
+ .progressBar{
+   height: 10px;
+   width: 0px;
+   /* top: 0; */
+   /* left: 0; */
+   margin-right:auto ;
+ }
+.img-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: auto;
+}
+.img-load{
+  width: 80vw;
+  height: 80vw;
+  background-color: rgba(200,200,200,.3);
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 10px 10px 10px;
+}
+.icon-img{
+  width: 25px;
+  height: 25px;
+}
+.img{
+  width: 100vw;
+  height: 100vw;
+}
+.btn-container{
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 20px;
+}
+.save-btn{
+  background-color: white;
+  border: rgb(17, 170, 102) solid 3px;
+  height: 50px;
+  width: 180px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.save-img{
+  width: 30px;
+  height: 30px;
+}

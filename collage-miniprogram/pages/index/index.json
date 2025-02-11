@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+      "tab-bar": "/components/tab-bar/tab-bar",
+      "color-picker": "/components/color-picker/color-picker",
+      "mp-dialog": "weui-miniprogram/dialog/dialog",
+      "custom-navbar":"/components/custom-navbar/custom-navbar"
+  }
+}

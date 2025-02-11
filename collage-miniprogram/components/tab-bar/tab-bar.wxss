@@ -1,0 +1,149 @@
+/* components/tab-bar/tab-bar.wxss */
+/* 在 app.wxss 或页面 wxss 文件中添加以下样式 */
+.container{
+  position: relative;
+}
+.first-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 48px;
+  background-color: white;
+  position: relative;
+  z-index: 999;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.first-container .button {
+  background-color: #007aff;
+  color: #fff;
+  border: none;
+  width: 80px;
+  height: 30px;
+  margin: 0;
+  margin-left: 20px;
+  border-radius: 4px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+.first-container .ultimate-submitBtn{
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+.go-image{
+  width: 30px;
+  height: 30px;
+}
+.right-image{
+  width: 10px;
+  height: 10px;
+  transform: rotate(90deg); /* 旋转 90 度 */
+}
+.second-container{
+  position: absolute;
+  top: 0px;
+  height: 48px;
+  width: 100%;
+  background-color: white;
+  z-index: 998;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.elements-case ,.masks-case{
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  height: 48px;
+}
+.elements-case-options, .masks-case-options{
+  flex: 1;
+  overflow-x: auto;
+  height: 100%;
+}
+.button-container{
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.button-container button{
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  margin-left: 10px;
+  background-color: white;
+}
+.elements-case .upload-btn, .masks-case .upload-btn{
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.elements-case .draw-btn, .masks-case .draw-btn{
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin-right: 10px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.collapse{
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  top: calc(48px - 200px - 5px);
+  left: 0;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top:5px;
+  z-index: 997;
+}
+.collapse button{
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  margin: 5px;
+  background-color: white;
+}
+.confirm-image{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 15px;
+  height: 15px;
+}
+.collapse-image{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.mask-image, .element-image{
+  width: 30px;
+  height: 30px;
+}
+.upload-image, .pen-image{
+  width: 20px;
+  height: 20px;
+}
